@@ -30,3 +30,5 @@ class Reservation(models.Model):
     
     def _str_(self):
         return f"Reservation by {self.name} on {self.date} at {self.time}"
+    
+    #postgresql://sav_gk4d_user:gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq@dpg-cskv6uqj1k6c73bo8bb0-
