@@ -31,7 +31,8 @@ import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(default='sqlite:///db.sqlite3')
 }
-
+#
+# DATABASE_URL = postgresql://sav_gk4d_user:gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq@dpg-cskv6uqj1k6c73bo8bb0-a/sav_gk4d
 # Application definition
 
 INSTALLED_APPS = [

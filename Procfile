@@ -1,2 +1,2 @@
 
-gunicorn saveur.wsgi --log-file -
+web: gunicorn saveur.wsgi --log-file -

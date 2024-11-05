@@ -5,3 +5,4 @@ typing_extensions==4.12.2
 djangorestframework
 Pillow
 django-cors-headers
+gunicorn
