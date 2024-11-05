@@ -10,7 +10,7 @@ services:
     name: saveur
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn saveur.saveur.wsgi:application "
+    startCommand: "gunicorn saveur.wsgi:application "
     envVars:
       - key: DATABASE_URL
         fromDatabase:
