@@ -86,6 +86,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'saveur.wsgi.application'
+ASGI_APPLICATION = 'saveur.asgi.application'
 
 
 # Database
