@@ -27,7 +27,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-import dj_database_url
+import os
+
+import dj_database_url 
 DATABASES = {
     'default': dj_database_url.config(
         # Replace this value with your local database's connection string.
@@ -46,13 +48,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
+    
     'api',
+    'rest_framework',
     'corsheaders',
+    'whitenoise.runserver_nostatic',
+    'drf_yasg'
 
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,7 +69,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
 
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+
 
 ]
 
@@ -134,7 +140,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+STATIC_ROOT = BASE_DIR /'staticfiles'
+
+STATICFILES_DIRS = [
+    BASE_DIR /'static',
+]
+
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Utilisé pour collectstatic
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+
+
 
 
 
