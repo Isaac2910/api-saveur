@@ -23,11 +23,10 @@ class DrinkAdmin(admin.ModelAdmin):
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-
-    list_display = ('name', 'email', 'date', 'time', 'num_people_display')
+    list_display = ('name', 'email', 'date', 'time', 'guests_display')
     search_fields = ('name', 'email')  # Permet de rechercher une réservation par nom ou email
     list_filter = ('date',)  # Ajoute un filtre par date
 
-    def num_people_display(self, obj):
-        return obj.num_people  # ou tout autre calcul si `num_people` n'existe pas dans Reservation
-    num_people_display.short_description = 'Number of People'
+    def guests_display(self, obj):
+        return obj.guests  # Affiche le nombre d'invités
+    guests_display.short_description = 'Number of Guests'
