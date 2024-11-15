@@ -20,14 +20,17 @@ from django.urls import path
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from api.views import FoodViewSet, DrinkViewSet, ReservationViewSet
+from api.views import FoodViewSet, DrinkViewSet,  DessertViewSet, BreakfastViewSet,ReservationViewSet
 
 router = DefaultRouter()
 router.register(r'food', FoodViewSet)
 router.register(r'drinks', DrinkViewSet)
 router.register(r'reservations', ReservationViewSet)
+router.register(r'desserts', DessertViewSet)
+router.register(r'breakfast', BreakfastViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
 ]
+

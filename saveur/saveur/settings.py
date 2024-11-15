@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-o6g1uh0vco_cq4x%icd8h72gmfv%m4&#hz1myw#ffdsk80kum8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
+    'default': dj_database_url.config(default='postgresql://sav_gk4d_user:gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq@dpg-cskv6uqj1k6c73bo8bb0-a.oregon-postgres.render.com/sav_gk4d')
 }
+
 
 ALLOWED_HOSTS = ['*']
 
@@ -130,8 +131,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
