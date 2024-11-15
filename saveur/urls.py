@@ -57,13 +57,9 @@ router.register(r'breakfast', BreakfastViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
-<<<<<<< HEAD:saveur/saveur/urls.py
-]
-
-=======
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     
 ]
->>>>>>> 6b079d313befb77ed7060144786fe497ec3cf4fb:saveur/urls.py
+
