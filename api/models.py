@@ -31,8 +31,6 @@ class Reservation(models.Model):
     def _str_(self):
         return f"Reservation by {self.name} on {self.date} at {self.time}"
     
-<<<<<<< HEAD:saveur/api/models.py
-###les tables ajouters
 
 class Breakfast(models.Model):
     name = models.CharField(max_length=100)
@@ -51,6 +49,4 @@ class Dessert(models.Model):
 
     def __str__(self):
         return self.name
-=======
-    #postgresql://sav_gk4d_user:gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq@dpg-cskv6uqj1k6c73bo8bb0-
->>>>>>> 6b079d313befb77ed7060144786fe497ec3cf4fb:api/models.py
+
