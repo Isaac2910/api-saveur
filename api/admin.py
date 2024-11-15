@@ -5,31 +5,31 @@ from django.contrib import admin
 #12345677
 
 from django.contrib import admin
-from .models import Food, Drink,  Breakfast, Dessert,Reservation
+from .models import Food, Drink, Breakfast, Dessert,Reservation
 
 # Enregistrement des modèles dans l'administration
 
 @admin.register(Food)
 class FoodAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'price', 'image_display')  # Affiche ces champs dans la liste des plats
+    list_display = ('name', 'description', 'price')  # Affiche ces champs dans la liste des plats
     search_fields = ('name',)  # Permet de rechercher un plat par nom
     list_filter = ('price',)  # Ajoute un filtre par prix
 
 @admin.register(Drink)
 class DrinkAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'price', 'image_display')  # Affiche ces champs dans la liste des boissons
+    list_display = ('name', 'description', 'price')  # Affiche ces champs dans la liste des boissons
     search_fields = ('name',)  # Permet de rechercher une boisson par nom
     list_filter = ('price',)  # Ajoute un filtre par prix
 
 @admin.register(Breakfast)
 class BreakfastAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'price', 'image_display')  # Affiche ces champs dans la liste des petits dejeunés
+    list_display = ('name', 'description', 'price')  # Affiche ces champs dans la liste des petits dejeunés
     search_fields = ('name',)  # Permet de rechercher un petit dejeuner par nom
     list_filter = ('price',)  # Ajoute un filtre par prix
 
 @admin.register(Dessert)
 class DessertAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'price', 'image_display')  # Affiche ces champs dans la liste des désserts
+    list_display = ('name', 'description', 'price')  # Affiche ces champs dans la liste des désserts
     search_fields = ('name',)  # Permet de rechercher un déssert par nom
     list_filter = ('price',)  # Ajoute un filtre par prix
 
