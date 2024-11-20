@@ -26,11 +26,16 @@ SECRET_KEY = 'django-insecure-o6g1uh0vco_cq4x%icd8h72gmfv%m4&#hz1myw#ffdsk80kum8
 DEBUG = False
 
 
+from decouple import config
+
 
 
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(default='postgresql://sav_gk4d_user:gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq@dpg-cskv6uqj1k6c73bo8bb0-a.oregon-postgres.render.com/sav_gk4d')
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL'),
+        ssl_require=True   # Obligatoire si votre base de données utilise SSL
+    )
 }
 
 
@@ -103,10 +108,15 @@ ASGI_APPLICATION = 'saveur.asgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'sav_gk4d',
+        'USER': 'sav_gk4d_user',
+        'PASSWORD': 'gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq',
+        'HOST': 'dpg-cskv6uqj1k6c73bo8bb0-a',  
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation
