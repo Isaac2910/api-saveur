@@ -106,18 +106,15 @@ ASGI_APPLICATION = 'saveur.asgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sav_gk4d',
-        'USER': 'sav_gk4d_user',
-        'PASSWORD': 'gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq',
-        'HOST': 'dpg-cskv6uqj1k6c73bo8bb0-a',  
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-
+DATABASES['default'] = dj_database_url.parse('postgresql://sav_gk4d_user:gxAEMjs30Sq0O2Htiu9N530ySUXrdzGq@dpg-cskv6uqj1k6c73bo8bb0-a.oregon-postgres.render.com/sav_gk4d')
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
